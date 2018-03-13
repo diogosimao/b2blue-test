@@ -16,7 +16,7 @@ django:
   volumes:
     - "./:/src"
   environment:
-    DJANGO_SETTINGS_MODULE: your_app.settings
+    DJANGO_SETTINGS_MODULE: b2blue-test.settings
     DATABASE_URL: ${DATABASE_URL}
   links:
     - db

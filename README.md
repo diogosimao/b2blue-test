@@ -1,6 +1,6 @@
-# Your App
+# b2blue-test
 
-The goal of your app.
+The goal is the get csv file via web page, parse it and get provide a page for graphics.
 
 ## Getting Started
 
@@ -23,13 +23,13 @@ or
 
 This is a quick project setup for local machine and development purpose to get server up at `http://0.0.0.0:8000/`.
 
-* Clone this [repo](git@github.com:diogosimao/django-docker-boilerplate.git).
+* Clone this [repo](git@github.com:diogosimao/b2blue-test.git).
 
-        $ git clone git@github.com:diogosimao/django-docker-boilerplate.git your-app
+        $ git clone git@github.com:diogosimao/b2blue-test.git b2blue-test
 
 * Create a virtual environment. Make sure you have [pipenv](https://github.com/pypa/pipenv) installed.
 
-        $ cd your-app
+        $ cd b2blue-test
     
         $ pipenv --three && pipenv shell
     
@@ -47,7 +47,7 @@ It will need some extras. See `requirements_docker.txt`
 
 * Create database on PostgreSQL
 
-        $ createdb your-app
+        $ createdb b2blue-test
 
 * With a shortcut just edit `./bin/start-development-server.sh` with your DB system info and run the shell script.
 
@@ -57,7 +57,7 @@ It will need some extras. See `requirements_docker.txt`
        
     * Set `DATABASE_URL` environment variable:
 
-            $ export DATABASE_URL=pgsql://YOUR_USER:YOUR_PWD@127.0.0.1:5432/your-app
+            $ export DATABASE_URL=pgsql://YOUR_USER:YOUR_PWD@127.0.0.1:5432/b2blue-test
     
     * Run Django `makemigration` and `migrate`:
     
@@ -78,7 +78,7 @@ Default Django administration screen should be up at `http://0.0.0.0:8000/admin`
     
 ## Running the tests
 
-From `your-app` directory with `pipenv --three` and `pipenv shell` previously executed:
+From `b2blue-test` directory with `pipenv --three` and `pipenv shell` previously executed:
 
     $ pip install -r requirements.txt
 

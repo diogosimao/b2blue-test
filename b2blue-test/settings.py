@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'your_app.urls'
+ROOT_URLCONF = 'b2blue-test.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'your_app.wsgi.application'
+WSGI_APPLICATION = 'b2blue-test.wsgi.application'
 
 
 # Database
