@@ -111,6 +111,7 @@ db.sqlite3
 
 #Static files
 staticfiles/
+uploads/
 
 #PyCharm
 .idea/

@@ -38,6 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'background_task',
+    'djmoney',
+
+    'apps.bags',
 ]
 
 MIDDLEWARE = [
@@ -118,3 +123,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# django-backgound-tasks
+BACKGROUND_TASK_RUN_ASYNC = True
+
+# django-money
+CURRENCY_CHOICES = [('USD', 'USD $'), ('EUR', 'EUR €'), ('BRL', 'BRL $')]

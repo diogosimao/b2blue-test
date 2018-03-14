@@ -68,11 +68,43 @@ It will need some extras. See `requirements_docker.txt`
 
             $ python manage.py runserver
 
+## Django background tasks
+
+### Required setup (must)
+
+* Necessary command:
+
+        $ python manage.py process_tasks
+        
+    * It must be executed on second instance of a unix shell (with the same previously created environment `pipenv` and with required `enviroment variables`) 
+        
+* Or in the same docker container running development server.
+
+    * Sample:
+    
+            $ docker exec -it <DJANGO_CONTAINER_ID> /bin/bash
+            
+            $ python manage.py process_tasks
+
 ## Administration Screen
 
-* Create `superuser` with the following line:
+* Shell
 
-        $ python manage.py createsuperuser
+    * Create `superuser` with the following line:
+
+            $ python manage.py createsuperuser
+
+
+* Docker
+    
+    * In the same docker container running development server.
+    
+        * Sample:
+
+              $ docker exec -it <DJANGO_CONTAINER_ID> /bin/bash
+        
+              $ python manage.py createsuperuser
+
 
 Default Django administration screen should be up at `http://0.0.0.0:8000/admin` and you are able to login in.
     
@@ -119,4 +151,4 @@ and
 
 ## Acknowledgments
 
-* My folks
+* B2Blue.com
