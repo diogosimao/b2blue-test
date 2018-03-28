@@ -34,10 +34,6 @@ def get_unit_as_instance(unit_name):
     return None
 
 
-def get_created_from_str(created_at_str):
-    return created_at_str
-
-
 @background(schedule=1)
 def bag_insertion(file_id):
     csv_file_instance = CSVFile.objects.filter(parsed__isnull=True, id=file_id).first()

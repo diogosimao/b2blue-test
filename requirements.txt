@@ -3,9 +3,12 @@ dj-database-url==0.5.0
 Django==2.0.2
 django-appconf==1.0.2
 django-background-tasks==1.1.13
+django-bootstrap4==0.0.6
 django-compat==1.0.15
+django-icons==0.1.0
 django-measurement==3.0.0
 django-money==0.12.3
+django-filter=="2.0.0.dev1"
 measurement==2.0.1
 mpmath==1.0.0
 psycopg2==2.7.4

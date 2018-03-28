@@ -1,0 +1,68 @@
+{% extends "bags/base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% load bootstrap4 %}
+{% load icons %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_javascript jquery='full' %}
+
+{% block title %}Bags {% trans 'Reports' %}{% endblock %}
+
+{% block content_title %}<h1>{% trans 'Reports' %}</h1>{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <form action="" method="get" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% bootstrap_form filter.form %}
+                {% buttons %}
+                    <button type="submit" class="btn btn-primary btn-custom">
+                    {% icon 'search' %}{% trans 'Bag search' %}
+                    </button>
+                {% endbuttons %}
+            </form>
+            {% bootstrap_messages %}
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <h2>{% icon 'list' %} {% trans 'Bags' %}</h2>
+            {% if filter.qs %}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>{% trans 'Residue' %}</th>
+                            <th>{% trans 'Quantity' %}</th>
+                            <th>{% trans 'Price' %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for obj in filter.qs %}
+                            <tr>
+                                <th scope="row">{{ forloop.counter0 }}</th>
+                                    <td>{{ obj.residue_name }}</td>
+                                    <td>{{ obj.quantity }}</td>
+                                    <td>{{ obj.price }}</td>
+                                </th>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>0 {% trans 'bags' %}</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<span class="divider"><hr /></span>
+{% endblock %}

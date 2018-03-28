@@ -41,6 +41,9 @@ INSTALLED_APPS = [
 
     'background_task',
     'djmoney',
+    'django_filters',
+    'bootstrap4',
+    'django_icons',
 
     'apps.bags',
 ]
@@ -123,6 +126,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'b2blue-test', 'static'),
+)
 
 # django-backgound-tasks
 BACKGROUND_TASK_RUN_ASYNC = True
