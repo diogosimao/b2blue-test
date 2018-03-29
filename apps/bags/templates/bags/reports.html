@@ -5,7 +5,6 @@
 {% load bootstrap4 %}
 {% load icons %}
 {% bootstrap_css %}
-{% bootstrap_javascript %}
 {% bootstrap_javascript jquery='full' %}
 
 {% block title %}Bags {% trans 'Reports' %}{% endblock %}
@@ -19,13 +18,28 @@
     <div class="row">
         <div class="col-md">
             <form action="" method="get" enctype="multipart/form-data">
-                {% csrf_token %}
-                {% bootstrap_form filter.form %}
-                {% buttons %}
-                    <button type="submit" class="btn btn-primary btn-custom">
-                    {% icon 'search' %}{% trans 'Bag search' %}
-                    </button>
-                {% endbuttons %}
+                <div class="row">
+                    <div class="col-md-4">
+                        {% bootstrap_field filter.form.measure %}
+                        {% bootstrap_field filter.form.residue_name %}
+                        {% bootstrap_field filter.form.price layout='horizontal' %}
+                        {% bootstrap_field filter.form.price__gte %}
+                        {% bootstrap_field filter.form.price__lte %}
+                    </div>
+                    <div class="col-md-4">
+                        {% bootstrap_field filter.form.created_at__gte %}
+                        {% bootstrap_field filter.form.created_at__lte %}
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="col-md-4">
+                    {% buttons %}
+                        <button type="submit" class="btn btn-primary btn-custom">
+                        {% icon 'search' %}{% trans 'Bag search' %}
+                        </button>
+                    {% endbuttons %}
+                    </div>
+                </div>
             </form>
             {% bootstrap_messages %}
         </div>
